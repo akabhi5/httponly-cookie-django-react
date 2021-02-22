@@ -12,7 +12,7 @@ function App() {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      const res = await axios.post(`http://127.0.0.1:8000/`, data, {
+      const res = await axios.post(`http://localhost:8000/`, data, {
         withCredentials: true,
       });
       console.log(res.data);
@@ -23,7 +23,7 @@ function App() {
 
   const onLoginCheck = async (event) => {
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/`, {
+      const res = await axios.get(`http://localhost:8000/`, {
         withCredentials: true,
       });
       console.log(res.data);

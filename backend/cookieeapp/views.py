@@ -25,7 +25,7 @@ class LoginView(APIView):
                 {'email': email}, settings.SECRET_KEY, algorithm='HS256')
 
             response = Response()
-            response.set_cookie(key='token', value=encoded, httponly=True)
+            response.set_cookie(key='token', value=encoded, httponly=True, samesite='strict', path='/')
             response.data = {
                 'user': email,
             }
